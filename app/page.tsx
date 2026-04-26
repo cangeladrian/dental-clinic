@@ -117,7 +117,7 @@ export default function Page() {
         initial={{ y: '100%', opacity: 0 }}
         animate={{ y: '0%', opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-        className="font-bold leading-none tracking-tighter text-[#1a1a2e]"
+        className="font-medium leading-none tracking-tighter text-[#1a1a2e]"
         style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
       >
         BOOK
@@ -129,7 +129,7 @@ export default function Page() {
         initial={{ y: '100%', opacity: 0 }}
         animate={{ y: '0%', opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.42 }}
-        className="font-bold leading-none tracking-tighter  text-[#1a1a2e]"
+        className="font-medium leading-none tracking-tighter  text-[#1a1a2e]"
         style={{ fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}
       >
         YOUR <br /> APPOINTMENT
@@ -340,7 +340,7 @@ export default function Page() {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="flex  flex-col justify-center px-8 md:px-16 py-16 md:my-10 bg-black"
+          className="flex  flex-col justify-center px-8 md:px-16 py-16 md:mb-30 md:mt-10 bg-black"
         >
           <p className="text-[11px] tracking-[0.2em] uppercase text-white mb-4">Technology</p>
           <h2 className="font-light text-white text-3xl md:text-5xl tracking-tight leading-tight mb-6">
@@ -365,7 +365,7 @@ export default function Page() {
 
 
       {/* ── SERVICES ── */}
-      <section id="services" className="px-6 md:px-16 md:py-50 p-10 border-t border-gray-100">
+      <section id="services" className="px-6 md:px-16 text-center md:py-20 py-10">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -408,7 +408,7 @@ export default function Page() {
       </section>
 
       {/* ── TEAM PHOTOS ── */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 border-t mt-50 border-gray-100">
+      <section className="grid grid-cols-1 sm:grid-cols-3 border-t md:mt-50 border-gray-100">
         {['/pristroje.jpg', '/zuby.jpg', '/ambulancia.png'].map((src, i) => (
           <motion.div
             key={src}
