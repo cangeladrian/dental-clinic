@@ -316,7 +316,7 @@ export default function Page() {
           transition={{ duration: 0.7 }}
           className="relative min-h-[320px] overflow-hidden"
         >
-          <img src="/recepcia.png" alt="Equipment"
+          <img src="/recepcia.webp" alt="Equipment"
             className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
 
@@ -395,7 +395,7 @@ export default function Page() {
 
 
       <section className="grid grid-cols-1 sm:grid-cols-3 border-t md:mt-50 border-gray-100">
-        {['/pristroje.webp', '/zuby.jpg', '/ambulancia.webp'].map((src, i) => (
+        {['/pristroje.webp', '/zuby.jpg', '/ambulancia.png'].map((src, i) => (
           <motion.div
             key={src}
             variants={fadeUp}
@@ -405,7 +405,7 @@ export default function Page() {
             transition={{ duration: 0.6, delay: i * 0.12 }}
             className="relative overflow-hidden aspect-square group"
           >
-            <img src={src} alt="Team"
+            <img src={src} alt="equipment"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-[#0077b6]/0 " />
           </motion.div>
