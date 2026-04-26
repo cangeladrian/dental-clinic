@@ -94,7 +94,7 @@ export default function Page() {
           className="absolute inset-0"
         >
           <img
-            src="/dd.png"
+            src="/main.webp"
             alt="Dental Clinic"
             className="w-full md:h-[40vw] h-[70vw] object-cover object-center"
           />
@@ -104,8 +104,6 @@ export default function Page() {
 
 
         <div className="relative z-10 flex flex-col mb-20 justify-center  h-[140vw] md:h-screen p-8 md:px-24 max-w-2xl">
-
-
 
           <div className="overflow-hidden mb-2">
             <motion.h1
@@ -397,7 +395,7 @@ export default function Page() {
 
 
       <section className="grid grid-cols-1 sm:grid-cols-3 border-t md:mt-50 border-gray-100">
-        {['/pristroje.jpg', '/zuby.jpg', '/ambulancia.png'].map((src, i) => (
+        {['/pristroje.webp', '/zuby.jpg', '/ambulancia.webp'].map((src, i) => (
           <motion.div
             key={src}
             variants={fadeUp}
@@ -414,7 +412,9 @@ export default function Page() {
         ))}
       </section>
 
-      {/* ── CLINIC TEXT ── */}
+     
+
+
       <section className="px-6 md:px-24 py-50 text-center bg-black">
         <motion.div
           variants={fadeUp}
@@ -433,7 +433,6 @@ export default function Page() {
           </p>
         </motion.div>
       </section>
-
 
 
 
@@ -500,9 +499,6 @@ export default function Page() {
 
 
       </section>
-
-
-
 
 
 
