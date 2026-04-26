@@ -3,15 +3,15 @@
 import { motion } from 'framer-motion'
 import './globals.css'
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+
 
 const services = [
-  { title: 'Preventive check-ups',      desc: 'Help detect dental issues early and prevent more serious oral health problems.'          },
-  { title: 'Dental hygiene',            desc: 'Removes tartar and plaque to reduce the risk of tooth decay and gum disease.'            },
-  { title: 'Teeth whitening',           desc: 'Brightens the shade of your teeth safely and effectively.'                              },
-  { title: 'Endodontic treatment',      desc: 'Root canal therapy saves teeth affected by infection or inflammation.'                   },
-  { title: 'Dental fillings & crowns',  desc: 'Restore the function and appearance of damaged or weakened teeth.'                      },
-  { title: 'Dental implants',           desc: 'A permanent solution for replacing missing teeth.'                                      },
+  { title: 'Preventive check-ups', desc: 'Help detect dental issues early and prevent more serious oral health problems.' },
+  { title: 'Dental hygiene', desc: 'Removes tartar and plaque to reduce the risk of tooth decay and gum disease.' },
+  { title: 'Teeth whitening', desc: 'Brightens the shade of your teeth safely and effectively.' },
+  { title: 'Endodontic treatment', desc: 'Root canal therapy saves teeth affected by infection or inflammation.' },
+  { title: 'Dental fillings & crowns', desc: 'Restore the function and appearance of damaged or weakened teeth.' },
+  { title: 'Dental implants', desc: 'A permanent solution for replacing missing teeth.' },
 ]
 
 const reviews = [
@@ -21,43 +21,43 @@ const reviews = [
 ]
 
 const prices = [
-  { name: 'Initial examination',            price: '25 €'  },
-  { name: 'Consultation',                   price: '12 €'  },
-  { name: 'White filling',                  price: '50 €'  },
-  { name: 'Multi-surface white filling',    price: '80 €'  },
-  { name: 'Replacement of old filling',     price: '35 €'  },
-  { name: 'Tartar / calculus removal',      price: '10 €'  },
-  { name: 'X-ray image',                    price: '8 €'   },
-  { name: 'Root canal treatment',           price: '120 €' },
-  { name: 'Teeth whitening (in-office)',    price: '250 €' },
-  { name: 'Teeth whitening (home kit)',     price: '130 €' },
-  { name: 'Comprehensive dental hygiene',   price: '60 €'  },
+  { name: 'Initial examination', price: '25 €' },
+  { name: 'Consultation', price: '12 €' },
+  { name: 'White filling', price: '50 €' },
+  { name: 'Multi-surface white filling', price: '80 €' },
+  { name: 'Replacement of old filling', price: '35 €' },
+  { name: 'Tartar / calculus removal', price: '10 €' },
+  { name: 'X-ray image', price: '8 €' },
+  { name: 'Root canal treatment', price: '120 €' },
+  { name: 'Teeth whitening (in-office)', price: '250 €' },
+  { name: 'Teeth whitening (home kit)', price: '130 €' },
+  { name: 'Comprehensive dental hygiene', price: '60 €' },
 ]
 
 const navLinks = ['Home', 'Services', 'Price List', 'Blog', 'About Us']
 
-// ─── Animation variants ───────────────────────────────────────────────────────
+
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0  },
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0 },
 }
 
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 }
 
-// ─── Page ────────────────────────────────────────────────────────────────────
+// Page 
 
 export default function Page() {
   return (
     <main className="bg-white text-[#1a1a2e] font-[Poppins,sans-serif] overflow-x-hidden">
 
-      {/* ── NAV ── */}
+
       <motion.nav
         initial={{ y: -60, opacity: 0 }}
-        animate={{ y: 0,   opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16,1,0.3,1] }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between
                    px-6 md:px-12 py-4 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm"
       >
@@ -65,8 +65,8 @@ export default function Page() {
         <ul className="hidden md:flex gap-8 list-none">
           {navLinks.map(link => (
             <li key={link}>
-              <a href={`#${link.toLowerCase().replace(' ','-')}`}
-                 className="text-[11px] tracking-[0.12em] uppercase text-gray-500
+              <a href={`#${link.toLowerCase().replace(' ', '-')}`}
+                className="text-[11px] tracking-[0.12em] uppercase text-gray-500
                             hover:text-[#0077b6] transition-colors duration-200 no-underline">
                 {link}
               </a>
@@ -74,8 +74,8 @@ export default function Page() {
           ))}
         </ul>
         <a href="#book"
-           className="bg-[#0077b6] text-white text-[11px] tracking-[0.12em] uppercase
-                      px-5 py-2.5 rounded-full no-underline hover:bg-[#005f92] transition-colors duration-200">
+          className="bg-[#0077b6] text-white text-[11px] tracking-[0.12em] uppercase
+            px-5 py-2.5 rounded-full no-underline hover:bg-[#005f92] transition-colors duration-200">
           Sign Up
         </a>
       </motion.nav>
@@ -85,102 +85,96 @@ export default function Page() {
 
 
 
-
-
-      
-
-      {/* ── HERO ── */}
       <section id="home" className="h-[140vw] md:h-[40vw]  overflow-hidden">
-  {/* Fotka na celú šírku */}
-  <motion.div
-    initial={{ opacity: 0, scale: 1.06 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-    className="absolute inset-0"
-  >
-    <img
-      src="/dd.png"
-      alt="Dental Clinic"
-      className="w-full md:h-[40vw] h-[70vw] object-cover object-center"
-    />
-    {/* Gradient overlay zľava */}
-   
-  </motion.div>
 
-  {/* Text cez fotku — ľavá strana */}
-  <div className="relative z-10 flex flex-col mb-20 justify-center  h-[140vw] md:h-screen p-8 md:px-24 max-w-2xl">
-    
- 
+        <motion.div
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0"
+        >
+          <img
+            src="/dd.png"
+            alt="Dental Clinic"
+            className="w-full md:h-[40vw] h-[70vw] object-cover object-center"
+          />
 
-    <div className="overflow-hidden mb-2">
-      <motion.h1
-        initial={{ y: '100%', opacity: 0 }}
-        animate={{ y: '0%', opacity: 1 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-        className="font-medium leading-none tracking-tighter text-[#1a1a2e]"
-        style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
-      >
-        BOOK
-      </motion.h1>
-    </div>
 
-    <div className=" mb-8">
-      <motion.h1
-        initial={{ y: '100%', opacity: 0 }}
-        animate={{ y: '0%', opacity: 1 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.42 }}
-        className="font-medium leading-none tracking-tighter  text-[#1a1a2e]"
-        style={{ fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}
-      >
-        YOUR <br /> APPOINTMENT
-      </motion.h1>
-    </div>
+        </motion.div>
 
-    {/* Krivka — dekoratívna čiara */}
-    <motion.div
-      initial={{ scaleX: 0, opacity: 0 }}
-      animate={{ scaleX: 1, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-      className="origin-left mb-20 md:mb-8"
-    >
-      <svg viewBox="0 0 300 40" className="w-48 h-8" fill="none">
-        <path d="M0 15 Q75 2 150 10 Q225 18 300 5"
-              stroke="#0077b6" strokeWidth="3.5" strokeLinecap="round" />
-      </svg>
-    </motion.div>
 
-    <motion.p
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.65 }}
-      className="text-[#0077b6] text-[11px] tracking-[0.25em] text-center md:text-left uppercase font-semibold mb-10"
-    >
-      Healthy Smile Starts With Us
-    </motion.p>
-     <div className="flex flex-col items-center md:items-start">
-    <motion.a
-      href="#book"
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
-      className=" items-center justify-center bg-[#0077b6] text-white no-underline
+        <div className="relative z-10 flex flex-col mb-20 justify-center  h-[140vw] md:h-screen p-8 md:px-24 max-w-2xl">
+
+
+
+          <div className="overflow-hidden mb-2">
+            <motion.h1
+              initial={{ y: '100%', opacity: 0 }}
+              animate={{ y: '0%', opacity: 1 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              className="font-medium leading-none tracking-tighter text-[#1a1a2e]"
+              style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
+            >
+              BOOK
+            </motion.h1>
+          </div>
+
+          <div className=" mb-8">
+            <motion.h1
+              initial={{ y: '100%', opacity: 0 }}
+              animate={{ y: '0%', opacity: 1 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.42 }}
+              className="font-medium leading-none tracking-tighter  text-[#1a1a2e]"
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 5rem)' }}
+            >
+              YOUR <br /> APPOINTMENT
+            </motion.h1>
+          </div>
+
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="origin-left mb-20 md:mb-8"
+          >
+            <svg viewBox="0 0 300 40" className="w-48 h-8" fill="none">
+              <path d="M0 15 Q75 2 150 10 Q225 18 300 5"
+                stroke="#0077b6" strokeWidth="3.5" strokeLinecap="round" />
+            </svg>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="text-[#0077b6] text-[11px] tracking-[0.25em] text-center md:text-left uppercase font-semibold mb-10"
+          >
+            Healthy Smile Starts With Us
+          </motion.p>
+          <div className="flex flex-col items-center md:items-start">
+            <motion.a
+              href="#book"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className=" items-center justify-center bg-[#0077b6] text-white no-underline
                  px-10 py-4 rounded-full text-[11px] tracking-[0.15em] uppercase font-bold w-fit
                  hover:bg-[#005f92] transition-colors duration-200"
-    >
-      Explore
-    </motion.a>
-</div>
+            >
+              Explore
+            </motion.a>
+          </div>
 
-  </div>
-</section>
-
-
+        </div>
+      </section>
 
 
 
 
 
-      {/* ── BOOKING FORM ── */}
+
+
+
       <section id="book" className="bg-white px-6 md:px-16 md:py-20 py-10">
         <motion.div
           variants={fadeUp}
@@ -194,86 +188,86 @@ export default function Page() {
           <h2 className="font-bold text-3xl text-center uppercase md:text-4xl tracking-tight mb-10">Reserve your visit</h2>
 
           <motion.section
-  variants={stagger}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="px-6 md:px-26  flex flex-col sm:flex-row  justify-center items-center gap-6"
->
-  {[
-    {
-      icon: (
-        <svg viewBox="0 0 24 24"  className="w-8 h-8">
-          <path d="M12 2C9 2 6.5 4 6 7c-.3 1.5 0 3 .8 4.2L9 15h6l2.2-3.8C18 10 18.3 8.5 18 7c-.5-3-2.5-5-6-5zm-2 14v1a2 2 0 004 0v-1H10z"/>
-        </svg>
-      ),
-      top:    'MODERN AND PAINLESS',
-      bottom: 'TREATMENT',
-      blob:   false,
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24"  stroke="black" fill='none' strokeWidth="1.5" className="w-8 h-8">
-          <circle cx="12" cy="12" r="9"/>
-          <path strokeLinecap="round" d="M12 7v5l3 3"/>
-        </svg>
-      ),
-      top:    'FAST',
-      bottom: 'ONLINE ORDER',
-      blob:   false,
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5" className="w-8 h-8">
-          <circle cx="10" cy="7" r="3"/>
-          <path strokeLinecap="round" d="M4 20c0-3.3 2.7-6 6-6m5-1l2 2 3-3"/>
-        </svg>
-      ),
-      top:    'WITH US YOU CAN EXPECT',
-      bottom: 'TRUST AND COMFORT',
-      blob:   true,
-    },
-  ].map((card) => (
-    <motion.div
-      key={card.bottom}
-      variants={fadeUp}
-      transition={{ duration: 0.6 }}
-      className="relative w-52 h-56 rounded-2xl flex flex-col items-center justify-center text-center
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="px-6 md:px-26  flex flex-col sm:flex-row  justify-center items-center gap-6"
+          >
+            {[
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" className="w-8 h-8">
+                    <path d="M12 2C9 2 6.5 4 6 7c-.3 1.5 0 3 .8 4.2L9 15h6l2.2-3.8C18 10 18.3 8.5 18 7c-.5-3-2.5-5-6-5zm-2 14v1a2 2 0 004 0v-1H10z" />
+                  </svg>
+                ),
+                top: 'MODERN AND PAINLESS',
+                bottom: 'TREATMENT',
+                blob: false,
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" stroke="black" fill='none' strokeWidth="1.5" className="w-8 h-8">
+                    <circle cx="12" cy="12" r="9" />
+                    <path strokeLinecap="round" d="M12 7v5l3 3" />
+                  </svg>
+                ),
+                top: 'FAST',
+                bottom: 'ONLINE ORDER',
+                blob: false,
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5" className="w-8 h-8">
+                    <circle cx="10" cy="7" r="3" />
+                    <path strokeLinecap="round" d="M4 20c0-3.3 2.7-6 6-6m5-1l2 2 3-3" />
+                  </svg>
+                ),
+                top: 'WITH US YOU CAN EXPECT',
+                bottom: 'TRUST AND COMFORT',
+                blob: true,
+              },
+            ].map((card) => (
+              <motion.div
+                key={card.bottom}
+                variants={fadeUp}
+                transition={{ duration: 0.6 }}
+                className="relative w-52 h-56 rounded-2xl flex flex-col items-center justify-center text-center
                  px-6 overflow-hidden 
                 text-white
                  hover:-translate-y-1 transition-all duration-300"
-    >
- 
+              >
 
-      {/* Ikona */}
-      <div className="text-[#1a8a7a] mb-4 relative z-10">
-        {card.icon}
-      </div>
 
-      {/* Text */}
-      <p className="text-[10px] tracking-[0.15em] text-black leading-snug mb-1 relative z-10">
-        {card.top}
-      </p>
-      <p className="text-[13px] font-bold tracking-[0.1em] text-black relative z-10">
-        {card.bottom}
-      </p>
-    </motion.div>
-  ))}
-</motion.section>
+                {/* Ikona */}
+                <div className="text-[#1a8a7a] mb-4 relative z-10">
+                  {card.icon}
+                </div>
+
+                {/* Text */}
+                <p className="text-[10px] tracking-[0.15em] text-black leading-snug mb-1 relative z-10">
+                  {card.top}
+                </p>
+                <p className="text-[13px] font-bold tracking-[0.1em] text-black relative z-10">
+                  {card.bottom}
+                </p>
+              </motion.div>
+            ))}
+          </motion.section>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-full gap-6">
             {[
-              { label: 'Name',           type: 'text'     },
-              { label: 'E-mail address', type: 'email'    },
-              { label: 'Phone number',   type: 'tel'      },
-              { label: 'Preferred date', type: 'date'     },
+              { label: 'Name', type: 'text' },
+              { label: 'E-mail address', type: 'email' },
+              { label: 'Phone number', type: 'tel' },
+              { label: 'Preferred date', type: 'date' },
             ].map(field => (
               <div key={field.label} className="flex flex-col gap-2">
                 <label className="text-[11px] tracking-[0.12em]  uppercase text-gray-500">
                   {field.label}
                 </label>
                 <input type={field.type}
-                       className="border border-gray-300 rounded-full shadow-sm px-4 py-3 text-sm bg-white
+                  className="border border-gray-300 rounded-full shadow-sm px-4 py-3 text-sm bg-white
                                   focus:outline-none focus:border-blue-500 transition-colors" />
               </div>
             ))}
@@ -298,15 +292,15 @@ export default function Page() {
                 Your message
               </label>
               <textarea rows={3}
-                        className="border border-gray-300 rounded-xl shadow-sm px-4 py-3 text-sm bg-white resize-none
+                className="border border-gray-300 rounded-xl shadow-sm px-4 py-3 text-sm bg-white resize-none
                                    focus:outline-none focus:border-blue-500 transition-colors" />
             </div>
           </div>
-           <div className='flex justify-center py-10'>
-          <button className="mt-8 bg-[#0077b6] text-center text-white px-10 py-4 text-[11px]
+          <div className='flex justify-center py-10'>
+            <button className="mt-8 bg-[#0077b6] text-center text-white px-10 py-4 text-[11px]
                              tracking-[0.15em] uppercase rounded-full hover:bg-[#005f92] transition-colors">
-            Book Now →
-          </button>
+              Book Now →
+            </button>
           </div>
         </motion.div>
       </section>
@@ -315,12 +309,6 @@ export default function Page() {
 
 
 
-
-
-
-
-
-      {/* ── EQUIPMENT ── */}
       <section className="grid md:my-50 my-10 grid-cols-1 md:grid-cols-2 min-h-[680px] ">
         <motion.div
           variants={fadeUp}
@@ -331,7 +319,7 @@ export default function Page() {
           className="relative min-h-[320px] overflow-hidden"
         >
           <img src="/recepcia.png" alt="Equipment"
-               className="absolute inset-0 w-full h-full object-cover" />
+            className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
 
         <motion.div
@@ -352,7 +340,7 @@ export default function Page() {
             a matter of course with us. Modern dental care does not have to be painful.
           </p>
           <a href="#services"
-             className="inline-flex items-center gap-2 bg-[#0077b6] text-white no-underline
+            className="inline-flex items-center gap-2 bg-[#0077b6] text-white no-underline
                         px-7 py-3.5 text-[11px] tracking-[0.15em] uppercase rounded-full w-fit
                         hover:bg-[#005f92] transition-colors">
             Read More →
@@ -363,8 +351,6 @@ export default function Page() {
 
 
 
-
-      {/* ── SERVICES ── */}
       <section id="services" className="px-6 md:px-16 text-center md:py-20 py-10">
         <motion.div
           variants={fadeUp}
@@ -407,7 +393,9 @@ export default function Page() {
         </motion.div>
       </section>
 
-      {/* ── TEAM PHOTOS ── */}
+
+
+
       <section className="grid grid-cols-1 sm:grid-cols-3 border-t md:mt-50 border-gray-100">
         {['/pristroje.jpg', '/zuby.jpg', '/ambulancia.png'].map((src, i) => (
           <motion.div
@@ -420,7 +408,7 @@ export default function Page() {
             className="relative overflow-hidden aspect-square group"
           >
             <img src={src} alt="Team"
-                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-[#0077b6]/0 " />
           </motion.div>
         ))}
@@ -446,30 +434,27 @@ export default function Page() {
         </motion.div>
       </section>
 
-     
-
 
 
 
 
       <section className="grid grid-cols-1 ">
-     
-          <motion.div
-          
-     
-            className="relative overflow-hidden  group"
-          >
-            <img src="/clinic.png" alt="Clinic"
-                 className="w-full h-full object-cover transition-transform duration-700 " />
-          </motion.div>
-     
+
+        <motion.div
+
+
+          className="relative overflow-hidden  group"
+        >
+          <img src="/clinic.png" alt="Clinic"
+            className="w-full h-full object-cover transition-transform duration-700 " />
+        </motion.div>
+
       </section>
 
 
 
 
 
-      {/* ── REVIEWS ── */}
       <section className="px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center py-20 border-t border-gray-100">
         <motion.div
           variants={fadeUp}
@@ -482,7 +467,7 @@ export default function Page() {
           <p className="text-[11px] tracking-[0.2em] uppercase text-[#0077b6] mb-3">Testimonials</p>
           <h2 className="font-bold text-3xl md:text-4xl tracking-tight">Words from our patients</h2>
           <br />
-           <span className="font-bold text-5xl md:text-6xl py-30 text-[#0077b6]">1500+</span>
+          <span className="font-bold text-5xl md:text-6xl py-30 text-[#0077b6]">1500+</span>
           <p className="text-sm text-gray-500 tracking-wider uppercase mt-2">5-star reviews</p>
         </motion.div>
 
@@ -513,7 +498,7 @@ export default function Page() {
         </motion.div>
 
 
-         
+
       </section>
 
 
@@ -524,8 +509,8 @@ export default function Page() {
 
 
 
-      {/* ── TEAM TEXT ── */}
-      <section className="px-6 md:px-24 py-20 text-center border-t border-gray-100 bg-white">
+
+      <section className="px-6 md:px-24 py-20 text-center  bg-white">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -548,58 +533,58 @@ export default function Page() {
 
 
 
-{/* ── FOOTER ── */}
-<footer className="bg-black border-t border-white/10">
-  <div className="max-w-7xl mx-auto px-6 md:px-16 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
-    
-    <div>
-      <img src="/logo.png" alt="Logo" className="h-10 mb-6 opacity-80" />
-      <p className="text-xs text-gray-400 leading-relaxed">
-        Modern dental care in the heart of Partizánske.
-      </p>
-    </div>
 
-    <div>
-      <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#0077b6] mb-5">Navigation</h3>
-      <div className="flex flex-col gap-3">
-        {navLinks.map(link => (
-          <a key={link} href={`#${link.toLowerCase().replace(' ', '-')}`}
-             className="text-xs text-gray-400 no-underline hover:text-white transition-colors">
-            {link}
-          </a>
-        ))}
-      </div>
-    </div>
+      <footer className="bg-black border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
 
-    <div>
-      <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#0077b6] mb-5">Contact</h3>
-      <div className="flex flex-col gap-3 text-xs text-gray-400">
-        <p>0902 325 621</p>
-        <p>dentalclinic@gmail.com</p>
-        <p>Partizánske 95801 – 3251/82</p>
-      </div>
-    </div>
-
-    <div>
-      <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#0077b6] mb-5">Opening Hours</h3>
-      <div className="flex flex-col gap-2 text-xs text-gray-400">
-        {[
-          ['Monday',    '7AM – 3PM'],
-          ['Tuesday',   '7AM – 3PM'],
-          ['Wednesday', '7AM – 5PM'],
-          ['Thursday',  '7AM – 3PM'],
-          ['Friday',    '8AM – 2PM'],
-        ].map(([day, hours]) => (
-          <div key={day} className="flex justify-between gap-4">
-            <span>{day}</span>
-            <span className="text-white">{hours}</span>
+          <div>
+            <img src="/logo.png" alt="Logo" className="h-10 mb-6 opacity-80" />
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Modern dental care in the heart of Partizánske.
+            </p>
           </div>
-        ))}
-      </div>
-    </div>
 
-  </div>
-</footer>
+          <div>
+            <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#0077b6] mb-5">Navigation</h3>
+            <div className="flex flex-col gap-3">
+              {navLinks.map(link => (
+                <a key={link} href={`#${link.toLowerCase().replace(' ', '-')}`}
+                  className="text-xs text-gray-400 no-underline hover:text-white transition-colors">
+                  {link}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#0077b6] mb-5">Contact</h3>
+            <div className="flex flex-col gap-3 text-xs text-gray-400">
+              <p>0902 325 621</p>
+              <p>dentalclinic@gmail.com</p>
+              <p>Partizánske 95801 – 3251/82</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#0077b6] mb-5">Opening Hours</h3>
+            <div className="flex flex-col gap-2 text-xs text-gray-400">
+              {[
+                ['Monday', '7AM – 3PM'],
+                ['Tuesday', '7AM – 3PM'],
+                ['Wednesday', '7AM – 5PM'],
+                ['Thursday', '7AM – 3PM'],
+                ['Friday', '8AM – 2PM'],
+              ].map(([day, hours]) => (
+                <div key={day} className="flex justify-between gap-4">
+                  <span>{day}</span>
+                  <span className="text-white">{hours}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </footer>
 
     </main>
   )
